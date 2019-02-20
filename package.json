@@ -4,6 +4,7 @@
     "index": "./index.js"
   },
   "dependencies": {
+    "a": "^2.1.2",
     "antd": "^3.0.0",
     "moment": "^2.19.3",
     "react": "^16.2.0",
