@@ -1,5 +1,6 @@
 .login-form {
   max-width: 300px;
+  animation: fadein 1.5s;
 }
 .login-form-forgot {
   float: right;

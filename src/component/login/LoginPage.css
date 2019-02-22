@@ -3,22 +3,29 @@
   height: 100%;
   display: flex;
 }
+
+.mobile-device .login-welcome {
+  display: none;
+}
+
 .login-welcome {
-  flex: 3;
   /* background-image: url('./fire.jpg'); */
   /* background: -webkit-linear-gradient(left, #a1c4fd , #c2e9fb);  */
   background: linear-gradient(to bottom right, #a1c4fd , #c2e9fb); /* 标准的语法 */
   /* background-color: cornflowerblue; */
   background-clip: border-box;
   background-size: 100% 100%;
+  width: calc(100% - 350px);
 }
 .login-panel {
   display: flex;
-  flex: 1;
   align-items:center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: 5px 5px 0px grey;
+  width: 350px;
+}
+.mobile-device .login-panel {
+  width: 100%;
 }
 .panel-tip {
   text-align: left;

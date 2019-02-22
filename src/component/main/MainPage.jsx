@@ -17,7 +17,7 @@ import './MainPage.css';
 import { LoginForm } from '../login/LoginForm';
 import '../login/LoginForm.css';
 import { SelectTree } from '../tree/SelectTree';
-
+import { Route } from 'react-router-dom';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 const menu = (
@@ -106,7 +106,7 @@ const data = [
 ];
 const getDataFromServer = () => {
   fetch('http://10.32.2.70:8080/hello') ///此url地址内有json数据  可模拟使用
-    .then(res => res.json())  ///解析json数据
+    .then(res => res.json()) ///解析json数据
     .then(data => {
       console.log(data);
       // this.setState({posts: data})  ////赋值到本地数据
@@ -117,114 +117,116 @@ const getDataFromServer = () => {
 export class MainPage extends Component {
   render() {
     return (
-      <div className="main-page">
-        <Layout>
-          <Header className="header">
-            <div className="logo" />
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={['2']}
-              style={{ lineHeight: '64px' }}
-            >
-              <Menu.Item key="1">nav 1</Menu.Item>
-              <Menu.Item key="2">nav 2</Menu.Item>
-              <Menu.Item key="3">nav 3</Menu.Item>
-            </Menu>
-          </Header>
+      <Route>
+        <div className="main-page">
           <Layout>
-            <Sider width={200} style={{ background: '#fff' }}>
+            <Header className="header">
+              <div className="logo" />
               <Menu
-                mode="inline"
-                defaultSelectedKeys={['1']}
-                defaultOpenKeys={['sub1']}
-                style={{ height: '100%', borderRight: 0 }}
+                theme="dark"
+                mode="horizontal"
+                defaultSelectedKeys={['2']}
+                style={{ lineHeight: '64px' }}
               >
-                <SubMenu
-                  key="sub1"
-                  title={
-                    <span>
-                      <Icon type="user" />
-                      subnav 1
-                    </span>
-                  }
-                >
-                  <Menu.Item key="1">option1</Menu.Item>
-                  <Menu.Item key="2">option2</Menu.Item>
-                  <Menu.Item key="3">option3</Menu.Item>
-                  <Menu.Item key="4">option4</Menu.Item>
-                </SubMenu>
-                <SubMenu
-                  key="sub2"
-                  title={
-                    <span>
-                      <Icon type="laptop" />
-                      subnav 2
-                    </span>
-                  }
-                >
-                  <Menu.Item key="5">option5</Menu.Item>
-                  <Menu.Item key="6">option6</Menu.Item>
-                  <Menu.Item key="7">option7</Menu.Item>
-                  <Menu.Item key="8">option8</Menu.Item>
-                </SubMenu>
-                <SubMenu
-                  key="sub3"
-                  title={
-                    <span>
-                      <Icon type="notification" />
-                      subnav 3
-                    </span>
-                  }
-                >
-                  <Menu.Item key="9">option9</Menu.Item>
-                  <Menu.Item key="10">option10</Menu.Item>
-                  <Menu.Item key="11">option11</Menu.Item>
-                  <Menu.Item key="12">option12</Menu.Item>
-                </SubMenu>
+                <Menu.Item key="1">nav 1</Menu.Item>
+                <Menu.Item key="2">nav 2</Menu.Item>
+                <Menu.Item key="3">nav 3</Menu.Item>
               </Menu>
-            </Sider>
-            <Layout style={{ padding: '0 24px 24px' }}>
-              <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
-              </Breadcrumb>
-              <Content
-                style={{
-                  background: '#fff',
-                  padding: 24,
-                  margin: 0,
-                  minHeight: 280
-                }}
-              >
-                单位：
-                <SelectTree />
-                接收时间：
-                <DatePicker className={'time-picker'} />
-                <DatePicker className={'time-picker'} />
-                <Button
-                  type="primary"
-                  className={'time-picker'}
-                  onClick={getDataFromServer}
+            </Header>
+            <Layout>
+              <Sider width={200} style={{ background: '#fff' }}>
+                <Menu
+                  mode="inline"
+                  defaultSelectedKeys={['1']}
+                  defaultOpenKeys={['sub1']}
+                  style={{ height: '100%', borderRight: 0 }}
                 >
-                  查询
-                </Button>
-                <Divider type="vertical" className="vertical-divider" />
-                <Button className={'time-picker'}>btn1</Button>
-                <Button className={'time-picker'}>btn2</Button>
-                <Button className={'time-picker'}>btn3</Button>
-                <Button className={'time-picker'}>btn4</Button>
-                <Divider />
-                {/* <Table dataSource={dataSource} columns={columns} /> */}
-                <Card className="card">
-                  <LoginForm />
-                </Card>
-              </Content>
+                  <SubMenu
+                    key="sub1"
+                    title={
+                      <span>
+                        <Icon type="user" />
+                        subnav 1
+                      </span>
+                    }
+                  >
+                    <Menu.Item key="1">option1</Menu.Item>
+                    <Menu.Item key="2">option2</Menu.Item>
+                    <Menu.Item key="3">option3</Menu.Item>
+                    <Menu.Item key="4">option4</Menu.Item>
+                  </SubMenu>
+                  <SubMenu
+                    key="sub2"
+                    title={
+                      <span>
+                        <Icon type="laptop" />
+                        subnav 2
+                      </span>
+                    }
+                  >
+                    <Menu.Item key="5">option5</Menu.Item>
+                    <Menu.Item key="6">option6</Menu.Item>
+                    <Menu.Item key="7">option7</Menu.Item>
+                    <Menu.Item key="8">option8</Menu.Item>
+                  </SubMenu>
+                  <SubMenu
+                    key="sub3"
+                    title={
+                      <span>
+                        <Icon type="notification" />
+                        subnav 3
+                      </span>
+                    }
+                  >
+                    <Menu.Item key="9">option9</Menu.Item>
+                    <Menu.Item key="10">option10</Menu.Item>
+                    <Menu.Item key="11">option11</Menu.Item>
+                    <Menu.Item key="12">option12</Menu.Item>
+                  </SubMenu>
+                </Menu>
+              </Sider>
+              <Layout style={{ padding: '0 24px 24px' }}>
+                <Breadcrumb style={{ margin: '16px 0' }}>
+                  <Breadcrumb.Item>Home</Breadcrumb.Item>
+                  <Breadcrumb.Item>List</Breadcrumb.Item>
+                  <Breadcrumb.Item>App</Breadcrumb.Item>
+                </Breadcrumb>
+                <Content
+                  style={{
+                    background: '#fff',
+                    padding: 24,
+                    margin: 0,
+                    minHeight: 280
+                  }}
+                >
+                  单位：
+                  <SelectTree />
+                  接收时间：
+                  <DatePicker className={'time-picker'} />
+                  <DatePicker className={'time-picker'} />
+                  <Button
+                    type="primary"
+                    className={'time-picker'}
+                    onClick={getDataFromServer}
+                  >
+                    查询
+                  </Button>
+                  <Divider type="vertical" className="vertical-divider" />
+                  <Button className={'time-picker'}>btn1</Button>
+                  <Button className={'time-picker'}>btn2</Button>
+                  <Button className={'time-picker'}>btn3</Button>
+                  <Button className={'time-picker'}>btn4</Button>
+                  <Divider />
+                  {/* <Table dataSource={dataSource} columns={columns} /> */}
+                  <Card className="card">
+                    <LoginForm />
+                  </Card>
+                </Content>
+              </Layout>
             </Layout>
           </Layout>
-        </Layout>
-      </div>
+        </div>
+      </Route>
     );
   }
 }

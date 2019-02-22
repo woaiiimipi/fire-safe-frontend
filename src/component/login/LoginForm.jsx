@@ -1,7 +1,7 @@
 import './LoginForm.css';
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-
+import { Link } from 'react-router-dom';
 class NormalLoginForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
@@ -45,13 +45,15 @@ class NormalLoginForm extends React.Component {
           <a className="login-form-forgot" href="">
             Forgot password
           </a>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className="login-form-button"
-          >
-            Log in
-          </Button>
+          <Link to='/main'>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className="login-form-button"
+            >
+              Log in
+            </Button>
+          </Link>
           Or <a href="">register now!</a>
         </Form.Item>
       </Form>
