@@ -9,6 +9,7 @@
     "bootstrap": "^4.3.1",
     "moment": "^2.19.3",
     "react": "^16.2.0",
+    "react-amap": "^1.2.8",
     "react-css-modules": "^4.7.9",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.3.1",

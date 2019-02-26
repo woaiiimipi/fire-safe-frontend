@@ -19,6 +19,7 @@ import { LoginForm } from '../login/LoginForm';
 import '../login/LoginForm.css';
 import { SelectTree } from '../tree/SelectTree';
 import { Route } from 'react-router-dom';
+import { GDMap } from '../map/GDMap';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 const menu = (
@@ -245,7 +246,8 @@ export class MainPage extends Component {
                   <Button className={'time-picker'}>btn3</Button>
                   <Button className={'time-picker'}>btn4</Button>
                   <Divider />
-                  <Table dataSource={dataSource} columns={columns} />
+                  {/* <Table dataSource={dataSource} columns={columns} /> */}
+                  <GDMap></GDMap>
                 </Content>
               </Layout>
             </Layout>
