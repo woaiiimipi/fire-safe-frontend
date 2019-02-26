@@ -11,9 +11,10 @@ import {
   Dropdown,
   message,
   Table,
-  Card
+  Card,
+  Drawer
 } from 'antd';
-import './MainPage.css';
+import './MainPage.scss';
 import { LoginForm } from '../login/LoginForm';
 import '../login/LoginForm.css';
 import { SelectTree } from '../tree/SelectTree';
@@ -115,14 +116,28 @@ const getDataFromServer = () => {
 };
 
 export class MainPage extends Component {
+  state = { visible: false };
+
+  showDrawer = () => {
+    this.setState({
+      visible: true,
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      visible: false,
+    });
+  };
+
   render() {
     return (
       <Route>
         <div className="main-page">
           <Layout>
-            <Header className="header">
-              <div className="logo" />
-              <Menu
+            <Header className="header main-header">
+              I AM THE HEADER!
+              {/* <Menu
                 theme="dark"
                 mode="horizontal"
                 defaultSelectedKeys={['2']}
@@ -131,7 +146,20 @@ export class MainPage extends Component {
                 <Menu.Item key="1">nav 1</Menu.Item>
                 <Menu.Item key="2">nav 2</Menu.Item>
                 <Menu.Item key="3">nav 3</Menu.Item>
-              </Menu>
+              </Menu> */}
+              <Button icon="setting" className="btn-setting" onClick={this.showDrawer}>
+                设置
+              </Button>
+              <Drawer
+                title="Basic Drawer"
+                placement="right"
+                closable={false}
+                onClose={this.onClose}
+                visible={this.state.visible}
+                className="main-drawer"
+              >
+                <div className="drawer-div">123</div>
+              </Drawer>
             </Header>
             <Layout>
               <Sider width={200} style={{ background: '#fff' }}>
@@ -217,10 +245,7 @@ export class MainPage extends Component {
                   <Button className={'time-picker'}>btn3</Button>
                   <Button className={'time-picker'}>btn4</Button>
                   <Divider />
-                  {/* <Table dataSource={dataSource} columns={columns} /> */}
-                  <Card className="card">
-                    <LoginForm />
-                  </Card>
+                  <Table dataSource={dataSource} columns={columns} />
                 </Content>
               </Layout>
             </Layout>

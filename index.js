@@ -9,12 +9,13 @@ import { WelcomeCarousel } from './src/component/login/WelcomeCarousel';
 import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { IsPC } from './src/utils/DeviceUtils';
+import { Demo } from './src/component/Demo';
 
 
 function App() {
   return (
     <div id="app" className={!IsPC() && 'mobile-device'}>
-      <Route exact path="/" component={LoginPage} />
+      <Route exact path="/" component={MainPage} />
       {/* <WelcomeCarousel></WelcomeCarousel> */}
       <Route exact path="/main" component={MainPage} />
     </div>
@@ -28,7 +29,7 @@ if(IsPC){
 }
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <App></App>
   </BrowserRouter>,
   document.getElementById('root')
 );
