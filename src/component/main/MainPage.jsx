@@ -149,7 +149,6 @@ export class MainPage extends Component {
                 <Menu.Item key="3">nav 3</Menu.Item>
               </Menu> */}
               <Button icon="setting" className="btn-setting" onClick={this.showDrawer}>
-                设置
               </Button>
               <Drawer
                 title="Basic Drawer"
