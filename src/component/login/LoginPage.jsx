@@ -4,7 +4,7 @@ import { LoginForm } from './LoginForm';
 import { MainPage } from '../main/MainPage';
 import { Card } from 'antd';
 import { WelcomeCarousel } from './WelcomeCarousel';
-
+import './style.scss';
 export class LoginPage extends Component {
   render() {
     return (

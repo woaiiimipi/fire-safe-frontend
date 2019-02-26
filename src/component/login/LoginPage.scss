@@ -1,6 +1,7 @@
+$match-parent: 100%;
 .login-page {
-  width: 100%;
-  height: 100%;
+  width: $match-parent;
+  height: $match-parent;
   display: flex;
 }
 

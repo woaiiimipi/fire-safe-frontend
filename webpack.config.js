@@ -7,6 +7,30 @@ module.exports = function(webpackConfig) {
     libraryName: 'antd',
     style: 'css',
   }]);
-
+  webpackConfig.module.loaders.push({
+    test:/\.scss$/,
+    // use: [
+    //   {
+    //     loader: "style-loader" // 将 JS 字符串生成为 style 节点
+    //   },
+    //   {
+    //     loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+    //   },
+    //   {
+    //     loader: "sass-loader" // 将 Sass 编译成 CSS
+    //   }
+    // ],
+    loaders: ['style-loader', 'css-loader', 'sass-loader']
+  });
+  
+  console.log('begin------------------------------');
+  console.log(webpackConfig);
+  console.log('end------------------------------');
+  // webpackConfig.rules = [{
+  //   use: [{
+  //     loader: 'sass-loader',
+  //   }]
+  // }];
+  
   return webpackConfig;
 };
