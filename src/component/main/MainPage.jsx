@@ -20,6 +20,7 @@ import '../login/LoginForm.css';
 import { SelectTree } from '../tree/SelectTree';
 import { Route } from 'react-router-dom';
 import { GDMap } from '../map/GDMap';
+import { XNavigator } from './XNavigator';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 const menu = (
@@ -121,13 +122,13 @@ export class MainPage extends Component {
 
   showDrawer = () => {
     this.setState({
-      visible: true,
+      visible: true
     });
   };
 
   onClose = () => {
     this.setState({
-      visible: false,
+      visible: false
     });
   };
 
@@ -136,9 +137,7 @@ export class MainPage extends Component {
       <Route>
         <div className="main-page">
           <Layout>
-            <Header className="header main-header">
-              I AM THE HEADER!
-              {/* <Menu
+            {/* <Menu
                 theme="dark"
                 mode="horizontal"
                 defaultSelectedKeys={['2']}
@@ -148,7 +147,7 @@ export class MainPage extends Component {
                 <Menu.Item key="2">nav 2</Menu.Item>
                 <Menu.Item key="3">nav 3</Menu.Item>
               </Menu> */}
-              <Button icon="setting" className="btn-setting" onClick={this.showDrawer}>
+            {/* <Button icon="setting" className="btn-setting" onClick={this.showDrawer}>
               </Button>
               <Drawer
                 title="Basic Drawer"
@@ -159,10 +158,15 @@ export class MainPage extends Component {
                 className="main-drawer"
               >
                 <div className="drawer-div">123</div>
-              </Drawer>
-            </Header>
+              </Drawer> */}
+            <div className="main-header">
+              <span className="main-title">
+                I AM TITLE!
+              </span>
+              <XNavigator />
+            </div>
             <Layout>
-              <Sider width={200} style={{ background: '#fff' }}>
+              {/* <Sider width={200} style={{ background: '#fff' }}>
                 <Menu
                   mode="inline"
                   defaultSelectedKeys={['1']}
@@ -212,13 +216,8 @@ export class MainPage extends Component {
                     <Menu.Item key="12">option12</Menu.Item>
                   </SubMenu>
                 </Menu>
-              </Sider>
-              <Layout style={{ padding: '0 24px 24px' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
-                  <Breadcrumb.Item>Home</Breadcrumb.Item>
-                  <Breadcrumb.Item>List</Breadcrumb.Item>
-                  <Breadcrumb.Item>App</Breadcrumb.Item>
-                </Breadcrumb>
+              </Sider> */}
+              <Layout style={{ padding: '16px 24px 24px' }}>
                 <Content
                   style={{
                     background: '#fff',
@@ -245,8 +244,8 @@ export class MainPage extends Component {
                   <Button className={'time-picker'}>btn3</Button>
                   <Button className={'time-picker'}>btn4</Button>
                   <Divider />
-                  {/* <Table dataSource={dataSource} columns={columns} /> */}
-                  <GDMap></GDMap>
+                  <Table dataSource={dataSource} columns={columns} />
+                  {/* <GDMap></GDMap> */}
                 </Content>
               </Layout>
             </Layout>

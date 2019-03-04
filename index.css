@@ -1,4 +1,5 @@
 
 html, body, #root, #app{
   height: 100%;
+  font-family: 'Microsoft YaHei', 'Times New Roman', Times, serif;
 }
