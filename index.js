@@ -11,15 +11,17 @@ import { Route } from 'react-router-dom';
 import { IsPC } from './src/utils/DeviceUtils';
 import { Demo } from './src/component/Demo';
 import { Main } from './src/component/main/Main';
+import { TransformCards } from './src/component/welcome/TransformCards';
 
 
 function App() {
   return (
     <div id="app" className={!IsPC() && 'mobile-device'}>
-      <Route exact path="/" component={LoginPage} />
+      {/* <Route exact path="/" component={LoginPage} /> */}
       {/* <WelcomeCarousel></WelcomeCarousel> */}
-      <Route exact path="/main" component={Main} />
+      {/* <Route exact path="/main" component={Main} /> */}
       {/* <Main></Main> */}
+      <TransformCards></TransformCards>
     </div>
   );
 }
