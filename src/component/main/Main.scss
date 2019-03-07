@@ -1,0 +1,20 @@
+
+.main {
+  animation: fadein 1s;
+  overflow: hidden;
+  .header {
+    .logo {
+      width: 120px;
+      height: 31px;
+      background: rgba(255,255,255,.2);
+      margin: 16px 28px 16px 0;
+      float: left;
+    }
+  }
+  .right-content {
+    padding: 0 24px 48px 24px;
+  }
+  // .content {
+  //   animation: content-in 1s;
+  // }
+}

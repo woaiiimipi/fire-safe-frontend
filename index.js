@@ -10,17 +10,25 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { IsPC } from './src/utils/DeviceUtils';
 import { Demo } from './src/component/Demo';
+import { Main } from './src/component/main/Main';
 
 
 function App() {
   return (
     <div id="app" className={!IsPC() && 'mobile-device'}>
-      <Route exact path="/" component={MainPage} />
+      <Route exact path="/" component={LoginPage} />
       {/* <WelcomeCarousel></WelcomeCarousel> */}
-      <Route exact path="/main" component={MainPage} />
+      <Route exact path="/main" component={Main} />
+      {/* <Main></Main> */}
     </div>
   );
 }
+
+// window.onbeforeunload = ()=>{
+//   return "真的离开?";
+// }
+
+
 
 if(IsPC){
   console.log(`PC`);

@@ -1,3 +1,4 @@
+/* @import 'antd/dist/antd.css'; */
 @keyframes fadein {
   from {
     opacity: 0;
@@ -6,3 +7,4 @@
     opacity: 1;
   }
 }
+
