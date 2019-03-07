@@ -3,7 +3,7 @@ import './TransformCards.scss';
 export class TransformCards extends React.Component {
   render() {
     return (
-      <div classNameName="transform-cards-container">
+      <div className="transform-cards-container">
         <div className="content">
           <a className="card">
             <div className="front">
