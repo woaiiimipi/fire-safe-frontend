@@ -1,6 +1,8 @@
     
 .transform-cards-container {
     background-image: url(../../res/image/sky_bg.png);
+    animation: fadein 1.5s;
+
     .content {
       display: flex;
       margin: 0 auto;

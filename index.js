@@ -17,11 +17,12 @@ import { TransformCards } from './src/component/welcome/TransformCards';
 function App() {
   return (
     <div id="app" className={!IsPC() && 'mobile-device'}>
-      {/* <Route exact path="/" component={LoginPage} /> */}
+      <Route exact path="/" component={LoginPage} />
       {/* <WelcomeCarousel></WelcomeCarousel> */}
-      {/* <Route exact path="/main" component={Main} /> */}
+      <Route exact path="/main" component={TransformCards} />
       {/* <Main></Main> */}
-      <TransformCards></TransformCards>
+      {/* <TransformCards></TransformCards> */}
+
     </div>
   );
 }
